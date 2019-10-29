@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY PAINT</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="toolbar">
+		<button id="pen">crayon</button>
+		<button id="eraser">gomme</button>
+		<input type="color" name="color" id="color_picker">
+		<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseur"/>
+		<button id="circle">cercle</button>
+		<button id="line">ligne</button>
+		<a href="#" class="button" id="btn-download" download="my-file-name.png">Download</a>
+
+		<button id="open">parcourir</button>
+
+		<button id="button">Open</button>
+		<input id="file-input" type="file" name="name" style="display: none;" />
+		<!-- <input type="button" value="draw" />
+        <input type="button" value="erase" /> -->
+	</div>
+	<canvas id="canvas" width="800" height="400"></canvas>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="paint.js"></script>
+	
+
+</body>
+</html>
