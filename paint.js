@@ -153,24 +153,61 @@ $("#line").click(function(){
 });
 
 //CERCLE
+
+var cisDrawing = false;
+var cstartX;
+var cstartY;
+
+$("#circle").click(function(){
+$("#canvas").mousedown(function (ec) {
+    circlehandleMouseDown(ec);
+});
+});
+function circlehandleMouseDown(ec) {
+    cmouseX = parseInt(ec.clientX - offsetX);
+    cmouseY = parseInt(ec.clientY - offsetY);
+    // $("#downlog").html("Down: " + mouseX + " / " + mouseY);
+
+    // Put your mousedown stuff here
+    if (cisDrawing) {
+        cisDrawing = false;
+        ctx.strokeStyle = $("#color_picker").val();
+        ctx.beginPath();
+        ctx.lineWidth = $("#epaisseurC").val();
+        var dist = Math.sqrt((cmouseX - cstartX) * (cmouseX - cstartX) + (cmouseY - cstartY) * (cmouseY - cstartY));
+        ctx.arc(cstartX, cstartY, dist, 0, 2 * Math.PI);
+        // console.log(((cmouseY-cstartY)/(cmouseX - cstartX)));
+        // console.log(dist);
+        // ctx.arc(mouseX,mouseY, 20 , 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.stroke(); 
+        canvas.style.cursor = "default";
+    } else {
+        cisDrawing = true;
+        cstartX = cmouseX;
+        cstartY = cmouseY;
+        $("#canvas").css('cursor','crosshair');
+    }
+
+}
 // var mouseC = {
 //     xC: 0,
 //     yC: 0
 // };
-$("#circle").click(function(){
-    $("#canvas").css('cursor','crosshair');
-    $("canvas").click(function(e){
-        mouseX=parseInt(e.clientX-offsetX);
-        mouseY=parseInt(e.clientY-offsetY);
-        console.log(mouseX);	
-        ctx.beginPath();
-        ctx.lineWidth = $("#epaisseurC").val();
-        ctx.arc(mouseX,mouseY, 20 , 0, 2 * Math.PI);
-        ctx.closePath();
-        ctx.stroke(); 
+// $("#circle").click(function(){
+//     $("#canvas").css('cursor','crosshair');
+//     $("canvas").click(function(e){
+//         mouseX=parseInt(e.clientX-offsetX);
+//         mouseY=parseInt(e.clientY-offsetY);
+//         console.log(mouseX);	
+//         ctx.beginPath();
+//         ctx.lineWidth = $("#epaisseurC").val();
+//         ctx.arc(mouseX,mouseY, 20 , 0, 2 * Math.PI);
+//         ctx.closePath();
+//         ctx.stroke(); 
          
-    });
-});
+//     });
+// });
 
 //RECTANGLE VIDE
 
