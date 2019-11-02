@@ -1,3 +1,79 @@
+body{
+	background-color:  	#C0C0C0;
+}
+h3{
+	font-family: sans-serif;
+	color:#555555;
+}
+.menu_tool{
+	display: none;
+}
+
+.menu_form{
+	display: none;
+}
+
+#color_picker{
+/*border: 2px solid #AD235E;
+border-radius: 20%;*/
+}
+
+#showtool, #showform{
+margin: 5px 0;
+
+padding: 10px 24px;
+border-radius: 4px;
+border: none;
+background-color: #555555;
+color: white;
+text-align: left;
+width: 100%;
+transition-duration: 0.4s;
+
+
+/*border: 2px solid #AD235E;
+width: 50px;
+height: 50px;
+
+	background-image: url(images/tool.png);
+	background-repeat: no-repeat;
+	background-size: 70%;
+	background-position: center;*/
+}
+
+#showtool:hover, #showform:hover{
+	background-color: white;
+	color:#555555;
+}
+
+#other{
+/*margin: 5px 0;*/
+
+padding: 10px 24px;
+ border: 2px solid #555555;
+border-radius: 4px;
+background-color: transparent;
+display:block;
+margin: 5px auto;
+}
+
+#btn-download{
+	text-decoration: none;
+	color: black;
+}
+#btn-download:hover{
+	text-decoration: none;
+	color: gray;
+}
+
+
+
 #canvas{
-	border : 1px solid black;
+border : 2px solid #555555;
+display: block;
+margin: 0 auto;
+}
+
+.card-body{
+	background-color: #555555;
 }

@@ -11,6 +11,7 @@
 
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
+// ctx.fillStyle = $("#color_pickerbg").val();
 ctx.fillStyle = "white";
 var cbg = ctx.fillStyle;
 // var strokeColor="red";
@@ -25,6 +26,19 @@ var canvasOffset=$("canvas").offset();
 var offsetX=canvasOffset.left;
 var offsetY=canvasOffset.top;
 var isMouseDown=false;
+
+
+
+// BOUTONS SELECTIONNÉS
+$("label.btn").prop("checked",$(this).prop("checked"));
+
+// GÉNÉRER LES MENUS
+        $('#showtool').click(function() {
+                $('.menu_tool').slideToggle("fast");
+        });
+        $('#showform').click(function() {
+                $('.menu_form').slideToggle("fast");
+        });
 
 
 function handleMouseDown(e){
@@ -152,11 +166,12 @@ $("#line").click(function(){
     });
 });
 
-//CERCLE
+//CERCLE VIDE
 
 var cisDrawing = false;
 var cstartX;
 var cstartY;
+
 
 $("#circle").click(function(){
 $("#canvas").mousedown(function (ec) {
@@ -190,24 +205,41 @@ function circlehandleMouseDown(ec) {
     }
 
 }
-// var mouseC = {
-//     xC: 0,
-//     yC: 0
-// };
-// $("#circle").click(function(){
-//     $("#canvas").css('cursor','crosshair');
-//     $("canvas").click(function(e){
-//         mouseX=parseInt(e.clientX-offsetX);
-//         mouseY=parseInt(e.clientY-offsetY);
-//         console.log(mouseX);	
-//         ctx.beginPath();
-//         ctx.lineWidth = $("#epaisseurC").val();
-//         ctx.arc(mouseX,mouseY, 20 , 0, 2 * Math.PI);
-//         ctx.closePath();
-//         ctx.stroke(); 
-         
-//     });
-// });
+
+//CIRCLE REMPLI
+
+var crisDrawing = false;
+var crstartX;
+var crstartY;
+
+$("#circleR").click(function(){
+$("#canvas").mousedown(function (ecr) {
+    RcirclehandleMouseDown(ecr);
+});
+});
+function RcirclehandleMouseDown(ecr) {
+    crmouseX = parseInt(ecr.clientX - offsetX);
+    crmouseY = parseInt(ecr.clientY - offsetY);
+    // Put your mousedown stuff here
+    if (crisDrawing) {
+        crisDrawing = false;
+        ctx.beginPath();
+        var dist = Math.sqrt((crmouseX - crstartX) * (crmouseX - crstartX) + (crmouseY - crstartY) * (crmouseY - crstartY));
+        ctx.arc(crstartX, crstartY, dist, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.fillStyle = $("#color_picker").val();;
+        ctx.fill(); 
+        canvas.style.cursor = "default";
+    } else {
+        crisDrawing = true;
+        crstartX = crmouseX;
+    
+        crstartY = crmouseY;
+        $("#canvas").css('cursor','crosshair');
+    }
+
+}
+
 
 //RECTANGLE VIDE
 
@@ -243,7 +275,7 @@ function recthandleMouseDown(e) {
     }
 
 }
-//RECTANGLE REMPLIE
+//RECTANGLE REMPLI
 
 var risDrawing = false;
 var rstartX;
@@ -294,12 +326,31 @@ document.getElementById('clear').addEventListener('click', function() {
       }, false);
 
 //BACK
-document.getElementById('cancel').addEventListener('click', function() {
+// document.getElementById('cancel').addEventListener('click', function(event) {
 
-      canvas.remove();
+//       event.preventDefault();
+//       // canvas.remove();
 
-      return false;
+//       // return false;
 
-    });
+//     });
+
+
+//COULEUR CANVAS
+// $("#color_pickerbg").click(function(){
+//   $("#canvas").mousedown(function(cc){
+//     change_color(cc);
+//   });
+// });
+
+// function change_color(cc){
+//   var canvas=document.getElementById("canvas");
+// var ctx=canvas.getContext("2d");
+// ctx.fillStyle = $("#color_pickerbg").val();
+// // ctx.fillStyle = "white";
+// var cbg = ctx.fillStyle;
+// // var strokeColor="red";
+// ctx.fillRect(0, 0, canvas.width, canvas.height);
+// };
 
 })(jQuery);

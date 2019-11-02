@@ -2,27 +2,47 @@
 <html>
 <head>
 	<title>MY PAINT</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-</head>
-<body>
-	<div id="toolbar">
 
-		<button id="pen">crayon</button>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+	
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+	</head>
+	<body>
+
+
+<!-- <div>
+  <p><a href="http://www.justwebcode.com" rel="index,follow">Just Web Code (www.justwebcode.com)</a></p>
+<input type="checkbox" class="selectall" /> Select All <br>
+<input type="checkbox" class="individual" /> Laravel <br>
+<input type="checkbox" class="individual" /> PHP <br>
+<input type="checkbox" class="individual" /> JavaScript <br>
+<input type="checkbox" class="individual" /> jQuery <br>
+</div> -->
+
+
+<!-- <div id="toolbar"> -->
+
+		<!-- <button id="pen">crayon</button>
 		<button id="eraser">gomme</button>
 		<input type="color" name="color" id="color_picker">
 		<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseur"/>
 
 		<button id="circle">cercle</button>
-		<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseurC"/>
+		<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseurC"/> -->
+		<!-- <button id="circleR">cercle rempli</button>
 
 		<button id="line">ligne</button>
-
-		<button id="rectangle">rectangle vide</button>
+	-->
+		<!-- <button id="rectangle">rectangle vide</button>
 		<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseurRV"/>
 
-		<button id="rectangleR">rectangle remplie</button>
+		<button id="rectangleR">rectangle rempli</button>
 
 		<a href="#" class="button" id="btn-download" download="my-file-name.png">Download</a>
 
@@ -33,11 +53,90 @@
 
 
 		<button id="cancel">annuler</button>
+	</div> -->
+
+	<div class="card">
+		<div class="card-header">
+			<h3>My paint</h3>
+
+			<input type="color" name="color" id="color_picker" title="couleur">
+
+			<div id="note_reactivity" class="btn-group notes" data-toggle="buttons">
+
+				<div class="outils">
+					<button id="showtool">Outils</button>
+					<div class="menu_tool">
+
+						<label class="btn btn-primary">
+							<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseur"/>
+						</label>
+
+						<label id="pen" class="btn btn-primary">
+							<input type="checkbox" checked>pen
+						</label>
+
+
+						<label id="eraser" class="btn btn-primary">
+							<input type="checkbox">eraser
+						</label>
+					</div>
+				</div>
+
+
+				<div class="form">
+					<button id="showform">Formes</button>
+					<div class="menu_form">
+
+						<label class="btn btn-primary">
+							<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseurC"/>
+						</label>
+
+						<label id="circle" class="btn btn-primary">
+							<input type="checkbox">cercle
+						</label>
+						<label id="circleR" class="btn btn-primary">
+							<input type="checkbox">cercle rempli
+						</label>
+
+						<label class="btn btn-primary">
+							<input type="range" value="0.5" min="1" max="10" step="1" id="epaisseurRV"/>
+						</label>
+
+						<label id="rectangle" class="btn btn-primary">
+							<input type="checkbox">rectangle vide
+						</label>
+						<label id="rectangleR" class="btn btn-primary">
+							<input type="checkbox">rectangle rempli
+						</label>
+
+						<label id="line" class="btn btn-primary">
+							<input type="checkbox">ligne
+						</label>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+			<div id="other">
+				<a href="#" class="button" id="btn-download" download="my-file-name.png">Download</a>
+
+				<input type="button" id="clear" value="Clear">
+			</div>
+
+		</div>
+		<div class="card-body">
+			<!-- <input type="color" name="color" id="color_pickerbg" title="couleur"> -->
+			<canvas id="canvas" width="900" height="600"></canvas>
+		</div>
+		<div class="card-footer text-muted">
+		
+		</div>
 	</div>
-
-	<canvas id="canvas" width="800" height="400"></canvas>
-
 	
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="paint.js"></script>
 	
 
