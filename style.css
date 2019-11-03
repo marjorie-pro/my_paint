@@ -1,79 +1,98 @@
-body{
-	background-color:  	#C0C0C0;
+html{
+	font-family: "Arial",sans-serif;
+	background-image: linear-gradient( 68.4deg,  rgba(248,182,204,1) 0.5%, rgba(192,198,230,1) 49%, rgba(225,246,240,1) 99.8% );
+	background-repeat: no-repeat;
+	height: 120%;
 }
-h3{
-	font-family: sans-serif;
+
+h1{
+	font-family: "CODE LIGHT",sans-serif;
+	text-align: center;
 	color:#555555;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #555555;
 }
-.menu_tool{
+
+/*.menu_tool{
 	display: none;
 }
 
 .menu_form{
 	display: none;
-}
-
-#color_picker{
-/*border: 2px solid #AD235E;
-border-radius: 20%;*/
-}
+}*/
 
 #showtool, #showform{
-margin: 5px 0;
-
-padding: 10px 24px;
-border-radius: 4px;
-border: none;
-background-color: #555555;
-color: white;
-text-align: left;
-width: 100%;
-transition-duration: 0.4s;
-
-
-/*border: 2px solid #AD235E;
-width: 50px;
-height: 50px;
-
-	background-image: url(images/tool.png);
-	background-repeat: no-repeat;
-	background-size: 70%;
-	background-position: center;*/
+	margin: 5px 0;
+	padding: 10px 24px;
+	border-radius: 4px;
+	border: none;
+	background-color: #555555;
+	color: white;
+	text-align: left;
+	width: 100%;
+	transition-duration: 0.4s;
 }
+
 
 #showtool:hover, #showform:hover{
 	background-color: white;
 	color:#555555;
 }
 
-#other{
-/*margin: 5px 0;*/
+.menu_tool{
+	border : 1px solid gray;
+	border-radius: 4px;
+	padding:5px;
+	margin: 5px;
+	text-align: center;
+}
+.menu_form span{
+	border : 1px solid gray;
+	border-radius: 4px;
+	padding:5px;
+	margin: 5px;
+	text-align: center;
+}
+.menu_form, .menu_tool{
+	text-align: center;
+	margin-bottom: 15px;
+}
 
-padding: 10px 24px;
- border: 2px solid #555555;
-border-radius: 4px;
-background-color: transparent;
-display:block;
-margin: 5px auto;
+#other{
+	padding: 10px 24px;
+	border: 2px solid #555555;
+	border-radius: 4px;
+	background-color: transparent;
+	display:block;
+	margin: 5px auto;
 }
 
 #btn-download{
 	text-decoration: none;
-	color: black;
+	color: #555555;
 }
 #btn-download:hover{
 	text-decoration: none;
 	color: gray;
 }
 
-
-
 #canvas{
-border : 2px solid #555555;
-display: block;
-margin: 0 auto;
+	background-color: white;
+	border : 2px solid #555555;
+	display: block;
+	margin: 0 auto;
+	/*width: 100%;
+	height: auto;*/
 }
 
 .card-body{
 	background-color: #555555;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 4px;
+}
+
+.card-footer{
+	background-color:#555555;
+
 }
